@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner-img">
+            <img src="./assets/img/Illustration.webp" alt="">
+        </div>
+        <div class="form-login">
+            <div class="header">
+                <h1><span class="main-text">Login</span> Page
+                </h1>
+            </div>
+            <div class="login-with">
+                <a href="#" class="login-link">
+                    <img src="./assets/img/Login-with-Google.webp" alt="login-with">
+                </a>
+                <a href="#" class="login-link">
+                    <img src="./assets/img/Login-with-facebook.webp" alt="login-with">
+                </a>
+            </div>
+
+            <div class="other-method text-center">
+                <span class="text">Or</span>
+            </div>
+
+
+            <form class="form" id="form-1">
+                <label class="box" for="email">
+                    <ion-icon class="icon" name="mail"></ion-icon>
+                    <div class="input-group">
+                        <div class="label">Email</div>
+                        <input inputType type="text" name="email" id="email" placeholder="example@gmail.com">
+                        <p class="form-message"></p>
+                    </div>
+                </label>
+                <label class="box" for="password">
+                    <ion-icon class="icon" name="key"></ion-icon>
+                    <div class="input-group">
+                        <div class="label">Password</div>
+                        <input inputType type="password" name="password" id="password" class="password-input" placeholder="Enter your password">
+                        <ion-icon class="password-icon show-password icon" name="eye"></ion-icon>
+                        <ion-icon class="icon d-none password-icon hide-password" name="eye-off"></ion-icon>
+                        <p class="form-message"></p>
+                    </div>
+                </label>
+                <div class="remember-login">
+                    <div class="input-check">
+                        <input type="checkbox" name="" id="">
+                        <span class="input-text">Remember me</span>
+                    </div>
+                    <a href="#" class="forget-password">Forgot Password?</a>
+                </div>
+                <button class="btn-submit" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            parentInputElement: '.box',
+            rules: [
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isRequiredPassword('#password', /*your custom message*/ )
+            ],
+            onsubmit: (data) => {
+                console.log(data);
+            }
+        })
+    </script>
+</body>
+
+</html>
